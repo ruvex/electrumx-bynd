@@ -3319,7 +3319,17 @@ class Beyondcoin(Coin):
     TX_PER_BLOCK = 2
     REORG_LIMIT = 800
     RPC_PORT = 10332
-    PEERS = []
+    PEER_DEFAULT_PORTS = {'t': '58001', 's': '58002'}
+    PEERS = [
+        'electrum-bynd.com s t',
+        'e1.electrum-bynd.com s t',
+        'e2.electrum-bynd.com s t',
+        'electrum-bynd.beyondcoin.io s t',
+        '100.20.60.61 s58002 t58001',
+        '18.190.151.10 s58002 t58001',
+        '52.0.220.131 s58002 t58001',
+        '52.11.0.47 s58002 t58001',
+    ]
 
 
 class BeyondcoinTestnet(Beyondcoin):
@@ -3331,7 +3341,12 @@ class BeyondcoinTestnet(Beyondcoin):
     GENESIS_HASH = ('e4c23a189582c0a7719569717bfeb59b'
                     '478a20367c5b36dd6fb18b7df4ecab51')
     RPC_PORT = 14332
-    PEERS = []
+    PEER_DEFAULT_PORTS = {'t': '58331', 's': '58332'}
+    PEERS = [
+        'bynd-test.electrum-bynd.com s t',
+        'e1-test.electrum-bynd.com s t',
+        'e2-test.electrum-bynd.com s t',
+    ]
 
 
 class BeyondcoinRegtest(BeyondcoinTestnet):
